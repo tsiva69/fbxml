@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<head>
+	<title>Browse FB XMLs</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#customattribute').change(function() {
+			  if ( this.value === 'pimsId')
+			  {
+				$("#type").show();
+			  }
+			  else
+			  {
+				$("#type").hide();
+			  }
+			});
+			var show_width = 0;
+			if (show_width == 1) {
+				$(window).resize(function(){
+					document.getElementById('page_width').innerHTML = $(window).width();
+				});				
+			}
+		});
+		function showhide() {
+			alert("This might work");
+			
+		}
+	</script>
+</head>
+<body>
+	<div id="fixed" class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div id="page_width"></div>
+			<h1 class="welcome">Welcome to the world of FB XML!!!</h1>
+
+			<div class="input-group" >
+			  <input type="text" class="form-control" >
+			  <div class="input-group-btn">
+				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ID Type? <span class="caret"></span></button>
+				<ul class="dropdown-menu dropdown-menu-right">
+				  <li><a href="#">FB Number</a></li>
+				  <li><a href="#">PIMS ID - Prov</a></li>
+				  <li><a href="#">PIMS ID - Prac</a></li>
+				  <li role="separator" class="divider"></li>
+				  <li><a href="#">Transaction Id</a></li>
+				  <li role="separator" class="divider"></li>
+				  <li><a href="#">NPI</a></li>
+				  <li><a href="#">SSN</a></li>
+				  <li><a href="#">EIN</a></li>
+				  <li><a href="#">Name</a></li>
+				</ul>
+			  </div><!-- /btn-group -->
+			</div><!-- /input-group -->
+		</div>
+	</div><!-- /fixed -->
+	<div id="data">
+		<div class="container">
+			<div class="xmldate">
+				<p onclick="showhide()">
+					<span class="glyphicon glyphicon-plus" id="plussign"></span>
+					<span class="glyphicon glyphicon-minus" id="minussign" ></span>
+				 	Show XMLDate here
+				</p>
+			</div>
+			<div id="demo" class="collapse">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+				sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			</div>
+		</div>
+	</div>
+</body>
